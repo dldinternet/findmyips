@@ -1,6 +1,11 @@
 = whatismyip
 
-Description goes here.
+WhatIsMyIP is a very simple Gem that does exactly what it's name suggests - It will tell you what your IP addresses are.
+If you are behind a firewall or on public WiFi you may have noticed that you always have two IP addresses as far as your
+workstation is concerned - the internal address that you are known by to the rest of the LAN and a public address which
+the rest of the Internet sees (your external or public address).
+If you have a situation where you are on the WAN of a big company or have only one workstation connected via some ISPs then you
+may have only a public IP. In this case your internal and external IPs will be the same.
 
 == Contributing to whatismyip
  

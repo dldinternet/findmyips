@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+# Adjust lib path
+_lib=File.expand_path(File.dirname(__FILE__) + '/../lib')
+$:.unshift(_lib) unless $:.include?(_lib)
+
+require "dldinternet/net/findmyips.rb"
+include DLDInternet::Net::FindMyIPs
+
+external = IPAddr.new(getExternal, Socket::AF_INET)
+puts
+puts "External IP: ".white + "#{external}".green
+puts "Internal IP: ".white + "#{getLocal}".green
+puts
