@@ -35,7 +35,8 @@ Gem::Specification.new do |s|
     "features/whatismyip.feature",
     "lib/dldinternet/Net/findmyips.rb",
     "spec/spec_helper.rb",
-    "spec/whatismyip_spec.rb"
+    "spec/whatismyip_spec.rb",
+    "whatismyip.gemspec"
   ]
   s.homepage = "http://github.com/dldinternet/whatismyip"
   s.licenses = ["MIT"]
