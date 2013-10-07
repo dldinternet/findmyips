@@ -6,4 +6,4 @@
 
 #rvm list
 rvm use 1.9.3@whatismyip >/dev/null
-ruby `dirname $0`/whatismyip.rb
+ruby `dirname $0`/findmyips.rb
