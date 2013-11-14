@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
     "features/step_definitions/whatismyip_steps.rb",
     "features/support/env.rb",
     "findmyips.gemspec",
-    "lib/dldinternet/Net/findmyips.rb",
+    "lib/dldinternet/net/findmyips.rb",
     "spec/findmyips_spec.rb",
     "spec/spec_helper.rb"
   ]
