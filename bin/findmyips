@@ -7,7 +7,7 @@ $:.unshift(_lib) unless $:.include?(_lib)
 require "dldinternet/net/findmyips.rb"
 include DLDInternet::Net::FindMyIPs
 
-external = IPAddr.new(getExternal, Socket::AF_INET)
+external = IPAddr.new(getExternal('ipinfo.io/ip'), Socket::AF_INET)
 puts
 puts "External IP: ".white + "#{external}".green
 puts "Internal IP: ".white + "#{getLocal}".green

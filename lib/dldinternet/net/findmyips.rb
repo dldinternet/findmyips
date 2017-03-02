@@ -29,15 +29,17 @@ module DLDInternet
       alias :getInternal getLocal
 
       #Simply fetch the external from dyndns, not so much magic :p
-      def getPublic(host = 'checkip.dyndns.org', port = 80, timeout = 5, maxtries = 10, report_progress = true)
+      def getPublic(url = 'checkip.dyndns.org', timeout = 5, maxtries = 10, report_progress = true)
         tries= 0
+        uri = URI.parse(url)
+        uri = URI.parse("http://#{url}") unless uri and uri.scheme
         while true
           begin
-            dyn = ::Net::HTTP.new(host, port)
+            dyn = ::Net::HTTP.new(uri.host, uri.port)
             dyn.open_timeout = timeout
             dyn.read_timeout = timeout
             unless dyn.nil?
-              resp = dyn.get("/")
+              resp = dyn.get(uri.path)
               unless resp.nil?
                 ip = resp.read_body.match(/\d+\.\d+\.\d+\.\d+/)
                 return ip[0]
