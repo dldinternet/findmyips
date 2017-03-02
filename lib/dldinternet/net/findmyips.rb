@@ -47,7 +47,7 @@ module DLDInternet
             end
           rescue Timeout::Error => e
             #puts e.class.to_s+" "+e.message
-            puts "No response from #{host}:#{port} within #{timeout} seconds".light_red if report_progress
+            puts "No response from #{uri.host}:#{uri.port} within #{timeout} seconds".light_red if report_progress
             tries += 1
             raise StandardError.new("Max retries exceeded") if tries >= maxtries
           end
